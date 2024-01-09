@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"declaration": true,
+		"types": [],
+        "allowJs": true
+    },
+    "include": [
+        "./src/lib/model/pbjs/extschema/ves.io/schema/index.ts",
+        "./src/lib/model/pbjs/extschema/ves.io/schema/*/form-fields",
+        "./src/lib/custom_model/pbjs/*/form-fields",
+        "./src/index.ts",
+        "./src/lib/model/pbjs/extschema/ves.io/schema/errors_pb.d.ts"
+    ],
+	"exclude": ["**/*.spec.ts"]
+}

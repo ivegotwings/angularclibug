@@ -1,0 +1,33 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
+	"noPropertyAccessFromIndexSignature": false,
+	"sourceMap": true,
+	"declaration": false,
+	"module": "ES2022",
+	"moduleResolution": "node",
+	"emitDecoratorMetadata": true,
+	"experimentalDecorators": true,
+	"resolveJsonModule": true,
+	"skipLibCheck": true,
+	"target": "ES2022",
+	"noUnusedLocals": false,
+	"useDefineForClassFields": false,
+	"typeRoots": ["node_modules/@types"],
+	"suppressImplicitAnyIndexErrors": true,
+	"ignoreDeprecations": "5.0",
+	"lib": ["es2019", "esnext", "dom", "ES2021.String"],
+    "baseUrl": ".",
+    "paths": {
+      "@requireundefined/config": ["projects/config/src/index.ts"],
+      "@requireundefined/schema": ["projects/schema/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "*/node_modules/*", "scripts/**/*", "coverage", "e2e"],
+	"angularCompilerOptions": {
+		"fullTemplateTypeCheck": true,
+		"strictInjectionParameters": true
+	}
+}

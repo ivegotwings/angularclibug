@@ -1,0 +1,32 @@
+{
+	"name": "schema",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "library",
+	"sourceRoot": "projects/schema/src",
+	"targets": {
+		"build": {
+			"executor": "@nx/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/projects/schema",
+				"main": "projects/schema/src/index.ts",
+				"tsConfig": "projects/schema/tsconfig.lib.json",
+				"assets": [
+					"projects/schema/*.md",
+					{
+						"glob": "**/form-fields.js",
+						"input": "projects/schema/src/lib/model/pbjs/extschema/ves.io/schema/",
+						"output": "/src/lib/model/pbjs/extschema/ves.io/schema/",
+						"ignore": ["**/*.d.ts"]
+					},
+					{
+						"glob": "*",
+						"input": "projects/schema/src/lib/model/pbjs/extschema/ves.io/schema/",
+						"output": "/src/lib/model/pbjs/extschema/ves.io/schema/"
+					}
+				]
+			}
+		}
+	},
+	"tags": []
+}

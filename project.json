@@ -9,10 +9,41 @@
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
+      "preserveSymlinks": true,
+      "allowedCommonJsDependencies": [
+        "zone.js/dist/zone-error",
+        "ngrx-store-localstorage",
+        "date-fns",
+        "lodash",
+        "tinycolor2",
+        "udd-lib",
+        "file-saver",
+        "ace-builds/webpack-resolver",
+        "currency-symbol-map",
+        "yaml",
+        "ajv",
+        "jszip",
+        "validator",
+        "is-cidr",
+        "@f5/voltsdk-common/crypto",
+        "asn1js",
+        "ngx-markjs",
+        "uuid/v4",
+        "core-js",
+        "graphlibrary",
+        "dagre-layout",
+        "raf"
+      ],
+      "namedChunks": true,
+      "assets": [{
+        "glob": "**/form-fields.js",
+        "input": "projects/schema/src/lib",
+        "output": "/"
+      }],
       "options": {
         "outputPath": "dist/requireundefined",
         "index": "./src/index.html",
-        "browser": "./src/main.ts",
+        "browser": "src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "./tsconfig.app.json",
         "assets": ["./src/favicon.ico", "./src/assets"],
@@ -41,7 +72,7 @@
           "sourceMap": true
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "development"
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
@@ -72,7 +103,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectName}"],
       "options": {
-        "jestConfig": "jest.config.ts"
+        "jestConfig": "jest.config.app.ts"
       }
     },
     "serve-static": {
